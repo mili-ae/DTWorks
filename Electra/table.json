@@ -1,0 +1,65 @@
+{
+    "1CDev"         :   {
+        "salary"    :   150,
+        "distance"  :   0.4,
+        "exp"       :   3,
+        "education" :   0,
+        "worktime"  :   8
+    },
+    "WebDev"        :   {
+        "salary"    :   250,
+        "distance"  :   0.3,
+        "exp"       :   1,
+        "education" :   2,
+        "worktime"  :   7
+    },
+    "BitrixDev"     :   {
+        "salary"    :   150,
+        "distance"  :   0.44,
+        "exp"       :   1,
+        "education" :   2,
+        "worktime"  :   5
+    },
+    "JavaDev"       :   {
+        "salary"    :   120,
+        "distance"  :   0.5,
+        "exp"       :   2,
+        "education" :   0,
+        "worktime"  :   8
+    },
+    "VBSQLDev"      :   {
+        "salary"    :   130,
+        "distance"  :   0.5,
+        "exp"       :   0,
+        "education" :   1,
+        "worktime"  :   6
+    },
+    "SeniorPHPDev"  :   {
+        "salary"    :   140,
+        "distance"  :   0,
+        "exp"       :   5,
+        "education" :   0,
+        "worktime"  :   0
+    },
+    "LeadAndroidDev":   {
+        "salary"    :   100,
+        "distance"  :   0,
+        "exp"       :   1,
+        "education" :   0,
+        "worktime"  :   0
+    },
+    "iOSAndroidDev" :   {
+        "salary"    :   88,
+        "distance"  :   0.5,
+        "exp"       :   3,
+        "education" :   1,
+        "worktime"  :   8
+    },
+    "Devops"        :   {
+        "salary"    :   100,
+        "distance"  :   1.12,
+        "exp"       :   1,
+        "education" :   0,
+        "worktime"  :   8
+    }
+}
