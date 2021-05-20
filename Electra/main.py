@@ -1,10 +1,11 @@
 import json
+from collections import Counter
 
 weight = [5, 2, 4, 4, 3]
 tend = [True, False, False, True, False]
 
 def get_data_table():
-    with open("table.json") as f:
+    with open("Electra/table.json") as f:
         data = json.load(f)
     
     return data
@@ -97,10 +98,17 @@ def electra2(limit: int):
         for to_job in tr_data:
             
             if job != to_job and compare(tr_data[job], tr_data[to_job]) > limit:
-                to_ret.append((job, compare(tr_data[job], tr_data[to_job]), to_job))
+                if compare(tr_data[job], tr_data[to_job]) == 100:
+                    to_ret.append(to_job)
+                else:
+                    to_ret.append(job)
 
-    return to_ret
+    count = Counter(map(str, to_ret))
+    
+
+    return count.most_common()[0]
+
 if __name__ == "__main__":
     # If you see this comment you've been rickrolled
     #print(translate(get_data_table()))
-    print(electra2(5))
+    print(electra2(2.5))
