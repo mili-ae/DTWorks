@@ -2,7 +2,7 @@ import json
 
 
 def get_data_table():
-    with open("table.json") as f:
+    with open("HierarchyAnalysis/table.json") as f:
         data = json.load(f)
     
     return data
@@ -25,9 +25,33 @@ def priority(data: list):
 
     return w
 
+def local_priority_check(table: list):
+    s = []
+    p = []
+    w = priority(table)
+
+    for i in range(len(table)):
+        si = 0
+        for j in range(len(table)):
+            si += table[j][i]
+        
+        s.append(si)
+
+    for i in range(len(s)):
+        p.append(s[i] * w[i])
+
+    amax = sum(p)
+    indP = (amax - len(table)) / (len(table) - 1)
+    cr = indP / 1.12
+    
+    if cr > 0.10:
+        print(cr, "> 0.10")
+        exit(0)
+
 def alternative(kn: list):
+    best = 0
     a = []
-    w = []
+    # w = []
 
     for key, element in get_data_table().items():
         if key != "k0":
@@ -38,14 +62,20 @@ def alternative(kn: list):
         for j in range(len(kn)):
             wi += kn[j] * a[i][j]
 
-        w.append(wi)
+        if best < wi:
+            best = wi
 
-    return w
+        # w.append(wi)
+
+    return best
 
 
 if __name__ == "__main__":
     # If you see this comment you've been rickrolled
     for key, table in get_data_table().items():
         print(f"{key}: ", priority(table))
+
+    for key, table in get_data_table().items():
+        local_priority_check(table)
     
     print(alternative(priority(get_data_table()["k0"])))

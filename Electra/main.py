@@ -1,6 +1,7 @@
 import json
 from collections import Counter
 
+
 weight = [5, 2, 4, 4, 3]
 tend = [True, False, False, True, False]
 
@@ -104,9 +105,12 @@ def electra2(limit: int):
                     to_ret.append(job)
 
     count = Counter(map(str, to_ret))
-    
 
-    return count.most_common()[0]
+    for i in range(len(list(tr_data))):
+        if list(tr_data)[i] not in list(count):
+            count[list(tr_data)[i]] = 0
+         
+    return count.most_common()
 
 if __name__ == "__main__":
     # If you see this comment you've been rickrolled
