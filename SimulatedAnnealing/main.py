@@ -6,15 +6,15 @@ NODE_COUNT = 6
 ITERATIONS = 1000000
 
 
-def create_path():
+def create_path() -> list:
     path = [n for n in range(NODE_COUNT)]
     path.append(0)
     return path
 
-def create_matrix():
+def create_matrix() -> list:
     return np.random.randint(1, 99, (NODE_COUNT, NODE_COUNT), "int64")
 
-def swap(old_path):
+def swap(old_path: list) -> list:
     path = old_path.copy()
 
     x, y = random.sample(range(1, NODE_COUNT - 1), 2)
@@ -22,7 +22,7 @@ def swap(old_path):
 
     return path
 
-def count(path, matrix):
+def count(path: list, matrix: list) -> int:
     print("Path Length:")
     length = 0
     
