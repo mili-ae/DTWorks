@@ -40,6 +40,7 @@ def count(path: list, matrix: list) -> int:
     return length
 
 def main():
+    iterations_done = 0
     temperature = 100
     path = create_path()
     matrix = create_matrix()
@@ -75,10 +76,12 @@ def main():
                 print("Discarding this path\n\n")
         
         temperature /= 2
+        iterations_done += 1
         if temperature <= 0.01: break
         
     print("Final path:", path)
     print("Final length:", len1)
+    print("Iterations done:", iterations_done)
 
 
 if __name__ == "__main__":

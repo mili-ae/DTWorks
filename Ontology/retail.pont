@@ -1,0 +1,63 @@
+; Fri Mar 10 11:28:28 MSK 2023
+; 
+;+ (version "3.2")
+;+ (build "Build 355")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot Name
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Salary
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Boss
+		(type SYMBOL)
+;+		(allowed-parents)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Company
+	(is-a USER)
+	(role abstract))
+
+(defclass HR
+	(is-a Company)
+	(role concrete)
+	(single-slot Name
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Salary
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass CEO
+	(is-a HR)
+	(role concrete)
+	(single-slot Boss
+		(type SYMBOL)
+;+		(allowed-parents CEO BuyerForeman ShopForeman)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass BuyerForeman
+	(is-a CEO)
+	(role concrete))
+
+(defclass Buyer
+	(is-a BuyerForeman)
+	(role concrete))
+
+(defclass ShopForeman
+	(is-a CEO)
+	(role concrete))
+
+(defclass Shopkeeper
+	(is-a ShopForeman)
+	(role concrete))

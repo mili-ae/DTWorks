@@ -1,0 +1,38 @@
+; Fri Mar 10 11:28:28 MSK 2023
+; 
+;+ (version "3.2")
+;+ (build "Build 355")
+
+([retail_Instance_10] of  HR
+
+	(Name "Jane Doe")
+	(Salary 1000))
+
+([retail_Instance_11] of  CEO
+
+	(Name "John Doe")
+	(Salary 2000))
+
+([retail_Instance_12] of  BuyerForeman
+
+	(Boss CEO)
+	(Name "Richard Doe")
+	(Salary 1500))
+
+([retail_Instance_13] of  Buyer
+
+	(Boss BuyerForeman)
+	(Name "Ann Doe")
+	(Salary 500))
+
+([retail_Instance_14] of  ShopForeman
+
+	(Boss CEO)
+	(Name "Rick Doe")
+	(Salary 1500))
+
+([retail_Instance_15] of  Shopkeeper
+
+	(Boss ShopForeman)
+	(Name "Marie Doe")
+	(Salary 500))

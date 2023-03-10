@@ -34,18 +34,18 @@ def main():
     print("4. Display children of class that are controlled by this class")
     
     def get_class(cls: str):
-        return cls_map[cls.lower()].__class__
+        return cls_map[cls.lower()]
     
     match int(input()):
         case 0:
-            cls = get_class(str(input()))
+            cls = get_class(str(input())).__class__
             print([c.__name__ for c in cls.__mro__][1:-1])   
         case 1:
-            cls = get_class(str(input()))
+            cls = get_class(str(input())).__class__
             print([c.__name__ for c in cls.__subclasses__()])
         # fuck it, im going ham  
         case 2:
-            cls = get_class(str(input()))
+            cls = get_class(str(input())).__class__
             text = str(input())
         
             for obj in cls_list:
@@ -53,7 +53,7 @@ def main():
                     if text in obj.get_name():
                         print(obj.get_name(), " | ", obj.__class__.__name__)  
         case 3:
-            cls = get_class(str(input()))
+            cls = get_class(str(input())).__class__
             text = int(input())
         
             for obj in cls_list:
@@ -66,7 +66,7 @@ def main():
             for obj in cls_list:
                 if obj == cls:
                     continue
-                elif isinstance(obj.get_boss(), cls):
+                elif obj.get_boss() != None and type(obj.get_boss()) == type(cls):
                     print(obj.__class__.__name__)
     
     
