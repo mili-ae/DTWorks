@@ -1,4 +1,4 @@
-; Fri Mar 10 11:28:28 MSK 2023
+; Fri Mar 10 19:13:08 MSK 2023
 ; 
 ;+ (version "3.2")
 ;+ (build "Build 355")
@@ -20,9 +20,9 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[retail_ProjectKB_Instance_10086]
-		[retail_ProjectKB_Instance_10087]
-		[retail_ProjectKB_Instance_10088]))
+		[retail_ProjectKB_Instance_10016]
+		[retail_ProjectKB_Instance_10017]
+		[retail_ProjectKB_Instance_10018]))
 
 ([CLSES_TAB] of  Widget
 
@@ -268,11 +268,11 @@
 
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
-		[retail_ProjectKB_Instance_50]
 		[STANDARD_CLASS_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
 		[STANDARD_SLOT_FORM_WIDGET]
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
+		[retail_ProjectKB_Instance_50]
 		[STANDARD_FACET_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
@@ -336,6 +336,21 @@
 	(property_list [retail_ProjectKB_Instance_11])
 	(widget_class_name "DataGenieTab.DataGenieTab"))
 
+([retail_ProjectKB_Instance_10016] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([retail_ProjectKB_Instance_10017] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([retail_ProjectKB_Instance_10018] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
 ([retail_ProjectKB_Instance_10050] of  Widget
 
 	(is_hidden TRUE)
@@ -384,21 +399,6 @@
 ([retail_ProjectKB_Instance_10085] of  String
 
 	(name "SearchTab_Query"))
-
-([retail_ProjectKB_Instance_10086] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([retail_ProjectKB_Instance_10087] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([retail_ProjectKB_Instance_10088] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
 
 ([retail_ProjectKB_Instance_11] of  Property_List
 )
